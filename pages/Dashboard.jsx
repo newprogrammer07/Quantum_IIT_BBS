@@ -1,10 +1,8 @@
 import React from 'react';
-// Import the local image for the Users by Region chart
-import usersRegionChart from '../assets/users-region-chart.jpg'; 
 
 const Dashboard = ({ onLogout }) => {
   return (
-    <div className="min-h-screen bg-brand-dark text-white animate-fade-in">
+    <div className="min-h-screen bg-brand-dark text-white">
       <header className="bg-brand-gray border-b border-white/10">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold tracking-wider">
@@ -42,26 +40,17 @@ const Dashboard = ({ onLogout }) => {
             <div className="lg:col-span-3 bg-brand-gray p-6 rounded-lg border border-white/10 h-[400px] flex flex-col">
                 <h3 className="text-xl font-bold mb-4">Financial Overview</h3>
                 <div className="flex-grow flex items-center justify-center">
-                    {/* Placeholder for Financial Chart */}
-                    <img src="https://placehold.co/600x400/1A1A1A/FF6B00?text=Financial+Chart" alt="Financial Overview Chart" className="w-full h-full object-contain p-4" />
+                    <img src="https://i.imgur.com/M6Lz3n5.png" alt="Financial Overview Chart" className="w-full h-full object-contain p-4" />
                 </div>
             </div>
              <div className="lg:col-span-2 bg-brand-gray p-6 rounded-lg border border-white/10 h-[400px] flex flex-col">
                 <h3 className="text-xl font-bold mb-4">Users by Region</h3>
                  <div className="flex-grow flex items-center justify-center">
-                    {/* Using your local image */}
-                    <img src={usersRegionChart} alt="Users by Region Chart" className="w-full h-full object-contain p-4" />
+                    <img src="https://i.imgur.com/J4p3p0R.png" alt="Users by Region Chart" className="w-full h-full object-contain p-4" />
                 </div>
             </div>
         </div>
       </main>
-      <style>{`
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
-      `}</style>
     </div>
   );
 };
