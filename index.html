@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-orange': '#FF6B00',
+              'brand-dark': '#0D0D0D',
+              'brand-gray': '#1A1A1A',
+              'brand-light-gray': '#B3B3B3',
+              'brand-beige': '#F5F1ED',
+              'brand-brown-text': '#5C4B44',
+              'brand-red-dark': '#8C5A5A',
+              'brand-red-light': '#B99A9A',
+              'brand-progress-bg': '#EAE5E1',
+            },
+            animation: {
+              'logo-scroll': 'logo-scroll 30s linear infinite',
+              'testimonial-scroll': 'testimonial-scroll 60s linear infinite',
+            },
+            keyframes: {
+              'logo-scroll': {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+              'testimonial-scroll': {
+                '0%': { transform: 'translateY(0)' },
+                '100%': { transform: 'translateY(-50%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://esm.sh/recharts@2.12.7",
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-brand-dark text-white font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.jsx"></script>
+  </body>
+</html>
