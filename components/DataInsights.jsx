@@ -1,12 +1,11 @@
 import React from 'react';
-// Make sure you have an image named 'graph.png' in your src/assets folder
+// Make sure you have a 'graph.png' file in your src/assets folder
 import graphImage from '../assets/graph.png'; 
 
 const statsData = [
-  { label: 'Data Sources Connected', value: '1,200+' },
-  { label: 'Reports Generated Daily', value: '2.5M' },
-  { label: 'Queries Processed (p/sec)', value: '500K' },
-  { label: 'Uptime', value: '99.99%' },
+    { label: 'Managed portfolio carbon footprint', value: '45,048', unit: 'tCO₂e', change: '+16%', changeType: 'increase' },
+    { label: 'Managed portfolio energy intensity', value: '123', unit: 'kWh/m²', change: '↓ 22%', changeType: 'decrease' },
+    { label: 'Managed portfolio energy consumption', value: '47.7M', unit: 'kWh', change: '↓ 27%', changeType: 'decrease' },
 ];
 
 const DataInsights = () => {
@@ -15,29 +14,26 @@ const DataInsights = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold">Data-Driven Insights</h2>
-          <p className="mt-4 text-lg text-brand-light-gray max-w-2xl mx-auto">
-            Visualize your success with our powerful and intuitive analytics tools.
-          </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div className="grid grid-cols-2 gap-6">
-            {statsData.map((stat) => (
-              <div key={stat.label} className="bg-brand-dark p-6 rounded-lg border border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {statsData.map((stat) => (
+            <div key={stat.label} className="bg-brand-dark p-6 rounded-lg border border-white/10">
+              <p className="text-brand-light-gray text-sm">{stat.label}</p>
+              <div className="flex items-baseline mt-2">
                 <p className="text-4xl font-bold text-brand-orange">{stat.value}</p>
-                <p className="text-brand-light-gray mt-2">{stat.label}</p>
+                <span className="text-brand-light-gray ml-2">{stat.unit}</span>
               </div>
-            ))}
-          </div>
-
-          {/* This part has been replaced with a reliable static image */}
-          <div className="bg-brand-dark p-6 rounded-lg border border-white/10 h-[400px]">
-            <h3 className="text-xl font-bold mb-4">Quarterly Performance</h3>
+              <p className={`mt-2 text-sm ${stat.changeType === 'increase' ? 'text-red-400' : 'text-green-400'}`}>{stat.change} from 2019</p>
+            </div>
+          ))}
+        </div>
+        <div className="bg-brand-dark p-6 rounded-lg border border-white/10 h-[400px]">
+            <h3 className="text-xl font-bold mb-4">Embodied Carbon Emissions</h3>
             <img 
               src={graphImage} 
-              alt="A bar chart showing quarterly performance" 
+              alt="Embodied carbon emissions chart" 
               className="w-full h-[calc(100%-2rem)] object-contain"
             />
-          </div>
         </div>
       </div>
     </section>
